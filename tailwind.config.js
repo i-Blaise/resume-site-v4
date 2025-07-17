@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         custom: ['Inter-Medium', 'sans-serif'],
         custom: ['Inter-Regular', 'sans-serif'],
+        custom: ['Inter-SemiBold', 'sans-serif'],
       },
     },
   },

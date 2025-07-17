@@ -14,6 +14,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('./assets/font/Inter/static/Inter_28pt-SemiBold.ttf') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
