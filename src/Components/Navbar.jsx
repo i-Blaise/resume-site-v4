@@ -9,12 +9,13 @@ export default function Navbar() {
             <a href="#work"><li className="text-[#A78295] uppercase font-Inter-Medium text-[12px] cursor-pointer hover:text-[#927182]">Works</li></a>
             <li className="text-[#A78295] uppercase font-Inter-Medium text-[12px] cursor-pointer hover:text-[#927182]">CV</li>
             <li>
-            <button
+            <a href="#footer">
+              <button
                 type="button"
-                className="flex items-center justify-center w-[78px] h-[35px] bg-[#A78295] rounded-[6.5px] text-[#331D2C] text-[14px] font-Inter-Medium hover:bg-[#927182] transition cursor-pointer"
-            >
-                Chat
-            </button>
+                className="flex items-center justify-center w-[78px] h-[35px] bg-[#A78295] rounded-[6.5px] text-[#331D2C] text-[14px] font-Inter-Medium hover:bg-[#927182] transition cursor-pointer">
+                  Chat
+              </button>
+            </a>
             </li>
         </ul>
     </nav>

@@ -21,6 +21,7 @@ export default function Homepage() {
       {/* Add other components as needed */}
       <VideoCard />
       <Work />
+      <hr className="border-t border-gray-100 my-26 w-full opacity-5" />
       <Skills />
       <Services />
       <QuoteCard />

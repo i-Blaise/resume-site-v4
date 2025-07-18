@@ -3,9 +3,20 @@ import RightArrow from "../assets/images/right-arrow.svg";
 export default function CTA() {
     return (
         <div className="flex flex-col items-center justify-center p-6 py-12 w-full text-center lg:gap-10 md:gap-10 gap-6">
-            <p className="font-Inter-Regular md:text-[19px] lg:text-[19px] text-[#A78295]">Let's grab a coffee and</p>
-            <h1 className="font-Inter-Medium lg:text-[121px] md:text-[121px] text-[58.7px] font-medium text-transparent bg-clip-text bg-[linear-gradient(158.21deg,#A78295_26%,#EFE1D1_60%)]">Connect for collab</h1>
+            <p 
+            data-aos="fade-up"
+            data-aos-delay="100"         // ms delay
+            data-aos-duration="800"
+            className="font-Inter-Regular md:text-[19px] lg:text-[19px] text-[#A78295]">Let's grab a coffee and</p>
+            <h1 
+            data-aos="fade-up"
+            data-aos-delay="200"         // ms delay
+            data-aos-duration="800"
+            className="font-Inter-Medium lg:text-[121px] md:text-[121px] text-[58.7px] font-medium text-transparent bg-clip-text bg-[linear-gradient(158.21deg,#A78295_26%,#EFE1D1_60%)]">Connect for collab</h1>
             <button
+            data-aos="fade-up"
+            data-aos-delay="300"         // ms delay
+            data-aos-duration="800"
             className="
                 flex flex-row items-center justify-between
 
