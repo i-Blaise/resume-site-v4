@@ -7,7 +7,7 @@ export default function WorkImages() {
             <div className="relative h-[518px] w-[381px] lg:w-[520px] md:h-[520px] bg-cover bg-center bg-no-repeat bg-[#450F2B82] bg-blend-overlay rounded-[13px]"
             style={{ backgroundImage: `url(${WorkImg1})` }}>
             </div>
-            <div className="relative h-[518px] w-[381px] lg:w-[828px] md:h-[520px] bg-cover bg-center bg-no-repeat bg-[#450F2B82] bg-blend-overlay rounded-[213px]"
+            <div className="relative h-[518px] w-[381px] lg:w-[828px] md:h-[520px] bg-cover bg-center bg-no-repeat bg-[#450F2B82] bg-blend-overlay rounded-[13px]"
             style={{ backgroundImage: `url(${WorkImg1})` }}>
             </div>
         </div>

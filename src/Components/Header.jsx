@@ -26,7 +26,7 @@ export default function Header() {
                 UI/UX). Passionately translating ideas into extraordinary
                 clean digital experiences users truly desire.
             </p>
-            <a href="/" className="inline-block transition-transform duration-600 hover:-translate-y-1.5">
+            <a href="#hero" className="inline-block transition-transform duration-600 hover:-translate-y-1.5">
                 <img className="mt-6 h-8 w-8 md:h-10 md:w-10" src={ArrowDown} alt="Arrow Down" />
             </a>
         </div>

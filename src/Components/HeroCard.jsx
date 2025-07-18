@@ -2,7 +2,7 @@ import bgImg from '../assets/images/bg-image.jpg';
 
 export default function HeroCard() {
     return (
-            <div
+            <div id='hero'
             className="relative h-[363px] lg:h-[560px] md:h-[560px] bg-cover bg-center bg-no-repeat bg-[#450F2B82] bg-blend-overlay rounded-[22px]"
             style={{ backgroundImage: `url(${bgImg})` }}
             >

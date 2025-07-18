@@ -16,11 +16,6 @@ export default function Homepage() {
       {/* Add other components as needed */}
       <VideoCard />
       <Work />
-      <hr className="border-t border-gray-100 lg:my-22 md:my-22 my-11 w-full opacity-5" />
-      <Work />
-      <hr className="border-t border-gray-100 lg:my-22 md:my-22 my-11 w-full opacity-5 py-8" />
-      <Work />
-      <hr className="border-t border-gray-100 lg:my-22 md:my-22 my-11 w-full opacity-5 py-8" />
     </>
   );
 }
