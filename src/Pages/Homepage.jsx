@@ -7,6 +7,8 @@ import Work from "../Components/Work";
 import Skills from "../Components/Skills";
 import Services from "../Components/Services";
 import QuoteCard from "../Components/QuoteCard";
+import CTA from "../Components/CTA";
+import Footer from "../Components/Footer";
 
 export default function Homepage() {
   return (
@@ -22,6 +24,10 @@ export default function Homepage() {
       <Skills />
       <Services />
       <QuoteCard />
+      <hr className="border-t border-gray-100 my-8 w-full opacity-5" />
+      <CTA />
+      <hr className="border-t border-gray-100 my-8 w-full opacity-5" />
+      <Footer />
     </>
   );
 }
