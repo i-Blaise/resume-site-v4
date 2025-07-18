@@ -4,6 +4,9 @@ import HeroCard from "../Components/HeroCard";
 import StatsCard from "../Components/StatsCard";
 import VideoCard from "../Components/VideoCard";
 import Work from "../Components/Work";
+import Skills from "../Components/Skills";
+import Services from "../Components/Services";
+import QuoteCard from "../Components/QuoteCard";
 
 export default function Homepage() {
   return (
@@ -16,6 +19,9 @@ export default function Homepage() {
       {/* Add other components as needed */}
       <VideoCard />
       <Work />
+      <Skills />
+      <Services />
+      <QuoteCard />
     </>
   );
 }
