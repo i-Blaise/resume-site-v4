@@ -1,3 +1,5 @@
+import RightArrow from '../../assets/images/right-arrow.svg';
+
 export default function WorkInfo() {
     return (
         <div className="flex flex-col lg:flex-row md:flex-row lg:h-[303px] md:h-[303px] h-[400px] bg-[#3F2E3E7D] rounded-[22px] items-center mt-6 lg:px-16 md:px-16 px-[8px]pb-[16px] pt-[16px] lg:gap-4 md:gap-4">
@@ -31,23 +33,29 @@ export default function WorkInfo() {
                 <div className="flex flex-col md:flex-row lg:flex-row gap-4 mt-14 font-Inter-SemiBold text-[13px] font-bold">
                     <button
                     className="
-                    lg:w-[251px]
-                    md:w-[251px]
-                    w-[216px]
-                    lg:h-[52px]
-                    md:h-[52px]
-                    h-[44px]
+                        flex flex-row items-center justify-between
 
-                    /* angled gradient on top, solid base underneath */
-                    bg-[linear-gradient(230.4deg,#A78295_9%,rgba(239,225,209,0.008)_40%),linear-gradient(0deg,#EFE1D1,#EFE1D1)]
+                        /* width & height */
+                        w-[216px] md:w-[251px]
+                        h-[44px] md:h-[52px]
 
-                    rounded-[4.33px]
-                    py-[16px]
-                    px-[8px]
-                    cursor-pointer
-                    transition-transform duration-600 hover:-translate-y-1.5
-                    text-[#331D2C]">
-                    Visit App
+                        /* background gradient */
+                        bg-[linear-gradient(230.4deg,#A78295_9%,rgba(239,225,209,0.008)_40%),linear-gradient(0deg,#EFE1D1,#EFE1D1)]
+
+                        rounded-[4.33px]
+                        px-4 md:px-8
+
+                        cursor-pointer
+                        transition-transform duration-200 hover:-translate-y-1
+                        text-[#331D2C]
+                    "
+                    >
+                    <span className="uppercase">Live website</span>
+                    <img
+                        src={RightArrow}
+                        alt="arrow"
+                        className="w-10 h-10"
+                    />
                     </button>
 
                     <button
@@ -66,8 +74,9 @@ export default function WorkInfo() {
                     py-[16px]
                     px-[8px]
                     cursor-pointer
-                    transition-transform duration-600 hover:-translate-y-1.5
-                    text-[#EFE1D1]">
+                    transition-transform duration-200 hover:-translate-y-1.5
+                    text-[#EFE1D1]
+                    uppercase">
                     Case Study
                     </button>
                 </div>
