@@ -2,7 +2,7 @@ import RightArrow from '../../assets/images/right-arrow.svg';
 
 export default function WorkInfo() {
     return (
-        <div className="flex flex-col lg:flex-row md:flex-row lg:h-[303px] md:h-[303px] h-[420px] bg-[#3F2E3E7D] rounded-[22px] items-center mt-6 lg:px-16 md:px-16 px-[8px] pb-[16px] pt-[16px] lg:gap-4 md:gap-4">
+        <div className="flex flex-col lg:flex-row md:flex-row h-auto bg-[#3F2E3E7D] rounded-[22px] items-center mt-6 lg:px-16 md:px-16 px-[8px] py-10 lg:py-14 md:py-14 lg:gap-4 md:gap-4">
             <div 
                 data-aos="fade-up"
                 data-aos-delay="100"         // ms delay

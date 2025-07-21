@@ -1,6 +1,6 @@
 export default function Skills() {
     return (
-        <div className="flex flex-col lg:flex-row md:flex-rowjustify-between mt-10 bg-[#3F2E3E7D] rounded-[22px] p-6 py-12 w-full gap-4 lg:gap-0 md:gap-0 text-left border border-blue-400">
+        <div className="flex flex-col lg:flex-row md:flex-rowjustify-between mt-10 bg-[#3F2E3E7D] rounded-[22px] p-6 py-12 w-full gap-4 lg:gap-0 md:gap-0 text-left">
             <div 
             data-aos="fade-up"
             data-aos-delay="200"         // ms delay
