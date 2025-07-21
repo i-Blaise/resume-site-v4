@@ -11,11 +11,11 @@ export default function Header() {
             font-Inter-Medium
             capitalize
             text-5xl
-            sm:text-5xl sm:leading-[1.1]
-            md:text-7xl md:leading-[1.1]
+            sm:text-[58px] sm:leading-[66px]
+            md:text-[121px] md:leading-[136px]
             lg:text-[121px] lg:leading-[136px]
             text-center
-            w-[55%] sm:w-[50%] md:w-[60%] lg:w-[90%]"
+            w-[380px] md:w-[60%] lg:w-[90%]"
         >
         Thinker. Blinker. Boundary breaker.
       </h1>

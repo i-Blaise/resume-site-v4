@@ -2,12 +2,12 @@ import RightArrow from '../../assets/images/right-arrow.svg';
 
 export default function WorkInfo() {
     return (
-        <div className="flex flex-col lg:flex-row md:flex-row lg:h-[303px] md:h-[303px] h-[400px] bg-[#3F2E3E7D] rounded-[22px] items-center mt-6 lg:px-16 md:px-16 px-[8px]pb-[16px] pt-[16px] lg:gap-4 md:gap-4">
+        <div className="flex flex-col lg:flex-row md:flex-row lg:h-[303px] md:h-[303px] h-[420px] bg-[#3F2E3E7D] rounded-[22px] items-center mt-6 lg:px-16 md:px-16 px-[8px] pb-[16px] pt-[16px] lg:gap-4 md:gap-4">
             <div 
                 data-aos="fade-up"
                 data-aos-delay="100"         // ms delay
                 data-aos-duration="800"
-                className="lg:w-[362px] md:w-[362px] w-[310px] flex h-auto">
+                className="lg:w-[362px] md:w-[362px] w-[310px] flex h-auto px-8 lg:px-0 md:px-0">
                 <h1
                 className="
                     font-Inter-Medium 
@@ -33,7 +33,7 @@ export default function WorkInfo() {
                 data-aos="fade-up"
                 data-aos-delay="200"         // ms delay
                 data-aos-duration="800"
-                className="lg:w-[769px] md:w-[769px] w-[310px] flex flex-col items-start h-auto">
+                className="lg:w-[769px] md:w-[769px] w-[310px] flex flex-col items-start h-auto px-8">
                 <p className="font-Inter-Regular lg:text-[17px] md:text-[17px] text-[14px] text-[#A78295] text-left">As the design director of the project, we designed an end-to-end experience for abler®,
                 helping panic attack victims with the hard moments and getting customized insights to track
                 their coping mechanism progress.

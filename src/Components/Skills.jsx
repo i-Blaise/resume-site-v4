@@ -1,6 +1,6 @@
 export default function Skills() {
     return (
-        <div className="flex flex-col lg:flex-row md:flex-rowjustify-between mt-10 bg-[#3F2E3E7D] rounded-[22px] p-6 py-12 w-full gap-4 lg:gap-0 md:gap-0 text-left">
+        <div className="flex flex-col lg:flex-row md:flex-rowjustify-between mt-10 bg-[#3F2E3E7D] rounded-[22px] p-6 py-12 w-full gap-4 lg:gap-0 md:gap-0 text-left border border-blue-400">
             <div 
             data-aos="fade-up"
             data-aos-delay="200"         // ms delay
@@ -8,7 +8,7 @@ export default function Skills() {
             className="lg:w-[60%] md:w-[60%] text-left lg:px-12 md:px-12">
                 <h1 className="font-Inter-Regular text-[51.3px] lg:text-[86.7px] md:text-[86.7px] text-transparent bg-clip-text capitalize bg-[linear-gradient(59.74deg,#EFE1D1_0%,#A78295_74%)] leading-none">Skills</h1>
             </div>
-            <div className="flex flex-col lg:w-[40%] md:w-[40%]text-left gap-6">
+            <div className="flex flex-col lg:w-[40%] md:w-[40%] text-left gap-6">
                 <div 
                 data-aos="fade-up"
                 data-aos-delay="200"         // ms delay

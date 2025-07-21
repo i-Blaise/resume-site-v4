@@ -1,6 +1,6 @@
 export default function WorkHeader() {
     return (
-        <div className="flex flex-col md:flex-row lg:flex-row h-[251px] lg:h-[240px] md:h-[240px] bg-[#A78295] rounded-[22px] py-10 lg:px-16 md:px-16 px-2">
+        <div className="flex flex-col md:flex-row lg:flex-row h-[281px] lg:h-[240px] md:h-[240px] bg-[#A78295] rounded-[22px] py-10 lg:px-16 md:px-16 px-8">
             <div 
                 data-aos="fade-up"
                 data-aos-delay="200"         // ms delay
