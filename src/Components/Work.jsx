@@ -17,7 +17,7 @@ export default function Work() {
     return (
         <>
             {portfolioData.map((items, index) => {
-                const { id, name, intro, info, url, images } = items;
+                const { id, name, intro, info, url, images, techStack } = items;
                 const Images = imagesComponents[items.images.length] || WorkImages_1;
                 const number = id; // Assuming id is the number you want to display
                 return (
@@ -26,7 +26,7 @@ export default function Work() {
                             <WorkHeader number={number} name={name} intro={intro} />
                             {/* <WorkImages_1 images={items.images} /> */}
                             <Images images={images} />
-                            <WorkInfo description={info} liveUrl={url} />
+                            <WorkInfo description={info} liveUrl={url} techStack={techStack} />
                         </div>
                     
                         <hr className="border-t border-gray-100 lg:my-22 md:my-22 my-11 w-full opacity-5" />

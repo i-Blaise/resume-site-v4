@@ -1,7 +1,3 @@
-import WorkImg1 from "../../assets/images/bg-image.jpg";
-import WorkImg2 from "../../assets/images/bg-image.jpg";
-import ImageEg from "../../assets/images/image-g.png";
-
 export default function WorkImages({ images = []}) {
     if (images.length < 3) return null;
 

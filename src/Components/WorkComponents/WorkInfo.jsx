@@ -1,6 +1,6 @@
 import RightArrow from '../../assets/images/right-arrow.svg';
 
-export default function WorkInfo({ description, liveUrl}) {
+export default function WorkInfo({ description, liveUrl, techStack = []}) {
     return (
         <div className="flex flex-col lg:flex-row md:flex-row h-auto bg-[#3F2E3E7D] rounded-[22px] items-center mt-6 lg:px-16 md:px-16 px-[8px] py-10 lg:py-14 md:py-14 lg:gap-4 md:gap-4">
             <div 
@@ -34,6 +34,14 @@ export default function WorkInfo({ description, liveUrl}) {
                 data-aos-delay="200"         // ms delay
                 data-aos-duration="800"
                 className="lg:w-[769px] md:w-[769px] w-[310px] flex flex-col items-start h-auto px-8">
+                {/* <p className="text-sm text-[#EFE1D1] mb-2">
+                    <strong>Tech Stack:</strong> {techStack.length > 0 ? techStack.join(" | ") : "N/A"}
+                </p> */}
+                <div className="flex flex-wrap gap-2 mb-2">
+                    {techStack.map((tech, index) => (
+                        <span key={index} className="bg-[#ffffff12] text-sm px-3 py-1 rounded-full font-semibold text-[#efe1d185] transition duration-300 hover:bg-[#efe1d185] cursor-pointer">{tech}</span>
+                    ))}
+                </div>
                 <p className="font-Inter-Regular lg:text-[17px] md:text-[17px] text-[14px] text-[#A78295] text-left">{description}</p>
                 <div className="flex flex-col md:flex-row lg:flex-row gap-4 mt-14 font-Inter-SemiBold text-[13px] font-bold">
                     {liveUrl && (

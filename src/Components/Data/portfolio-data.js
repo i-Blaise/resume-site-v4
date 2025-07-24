@@ -5,6 +5,14 @@ import TTH3 from "../../assets/images/portfolio/tth3.png";
 import Acacia1 from "../../assets/images/portfolio/acacia1.png";
 import Acacia2 from "../../assets/images/portfolio/acacia2.png";
 import Acacia3 from "../../assets/images/portfolio/acacia3.png";
+import MCGN1 from "../../assets/images/portfolio/mcgn1.png";
+import MCGN2 from "../../assets/images/portfolio/mcgn2.png";
+import ABiForum1 from "../../assets/images/portfolio/abiforum1.png";
+import ABiForum2 from "../../assets/images/portfolio/abiforum2.png";
+import Gino1 from "../../assets/images/portfolio/gino1.png";
+import Gino2 from "../../assets/images/portfolio/gino2.png";
+import Efas1 from "../../assets/images/portfolio/efas1.png";
+import Efas2 from "../../assets/images/portfolio/efas2.png";
 
 const portfolioData = [
   {
@@ -46,10 +54,7 @@ const portfolioData = [
     title: "Legacy Website Overview",
     intro: "The original Massive Cheerful Giving Network site provided essential NGO features like automated donation tracking and an admin portal for content updates.",
     info: "To improve performance and maintainability, I proposed rebuilding the site using Laravel and modern frontend technologies, paving the way for a future relaunched platform.",
-    images: [
-      "img/portfolio/mcgn1.png",
-      "img/portfolio/mcgn2.png"
-    ],
+    images: [MCGN1, MCGN2],
     techStack: ["PHP", "JavaScript", "HTML", "Bootstrap"]
   },
   {
@@ -63,11 +68,7 @@ const portfolioData = [
     title: "ABI Forum 2023 Website",
     intro: "The 2023 ABI Forum site offers visitors clear information on the event’s mission, sponsors, speakers, and ticket pricing.",
     info: "Built on Webflow for rapid updates, the static but flexible CMS ensures organizers can refresh content quickly without developer assistance.",
-    images: [
-      "img/portfolio/ABIForum1.png",
-      "img/portfolio/ABIForum2.png",
-      "img/portfolio/ABIForum3.png"
-    ],
+    images: [ABiForum1, ABiForum2],
     techStack: ["HTML", "CSS", "Webflow"]
   },
   {
@@ -81,10 +82,7 @@ const portfolioData = [
     title: "GinoPomoPromotion Campaign Portal",
     intro: "GB Foods needed a campaign portal to collect user entries and manage weekly contest winners efficiently.",
     info: "I built a secure portal that stores submissions, provides admin access for uploading winners, and captures valuable marketing insights for the campaign team.",
-    images: [
-      "img/portfolio/gino1.png",
-      "img/portfolio/gino2.png"
-    ],
+    images: [Gino1, Gino2],
     techStack: ["Laravel", "PHP", "JavaScript", "Blade"]
   },
   {
@@ -98,10 +96,7 @@ const portfolioData = [
     title: "SSNIT EFAS Portal",
     intro: "SSNIT required a system to track and manage physical client folders across departments to reduce errors and improve accountability.",
     info: "I developed the Electronic Finding Aid System (EFAS) allowing staff to request, locate, and return folders with full audit trails. The records department can also search the entire inventory efficiently.",
-    images: [
-      "img/portfolio/efas1.png",
-      "img/portfolio/efas2.png"
-    ],
+    images: [Efas1, Efas2],
     techStack: ["Laravel", "PHP", "JavaScript", "Java", "HTML", "CSS"]
   },
   {
