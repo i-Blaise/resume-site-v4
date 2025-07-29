@@ -12,7 +12,7 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                 className="
                     font-Inter-Medium 
                     lg:text-[121px] 
-                    md:text-[121px] 
+                    md:text-[102px] 
                     text-[47.7px]
                     text-left
                     lowercase 
@@ -33,7 +33,7 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                 data-aos="fade-up"
                 data-aos-delay="200"         // ms delay
                 data-aos-duration="800"
-                className="lg:w-[769px] md:w-[769px] w-[310px] flex flex-col items-start h-auto px-8">
+                className="lg:w-[769px] md:w-[435px] w-[310px] flex flex-col items-start h-auto px-8">
                 {/* <p className="text-sm text-[#EFE1D1] mb-2">
                     <strong>Tech Stack:</strong> {techStack.length > 0 ? techStack.join(" | ") : "N/A"}
                 </p> */}
@@ -45,22 +45,20 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                 <p className="font-Inter-Regular lg:text-[17px] md:text-[17px] text-[14px] text-[#A78295] text-left">{description}</p>
                 <div className="flex flex-col md:flex-row lg:flex-row gap-4 mt-14 font-Inter-SemiBold text-[13px] font-bold">
                     {liveUrl && (
-                        <a href={liveUrl}>
+                        <a target='_blank' href={liveUrl}>
                             <button 
                                 data-aos="fade-up"
                                 data-aos-delay="300"
                                 data-aos-duration="800"
                                 className="
                                     flex flex-row items-center justify-between
-                                    w-[216px] md:w-[251px]
+                                    w-[216px] md:w-[180px] lg:w-[251px]
                                     h-[44px] md:h-[52px]
                                     bg-[linear-gradient(230.4deg,#A78295_9%,rgba(239,225,209,0.008)_40%),linear-gradient(0deg,#EFE1D1,#EFE1D1)]
                                     rounded-[4.33px]
                                     px-4 md:px-8
                                     cursor-pointer transition-transform duration-200 hover:-translate-y-1
-                                    text-[#331D2C]
-                                "
-                            >
+                                    text-[#331D2C]">
                                 <span className="uppercase">Live website</span>
                                 <img src={RightArrow} alt="arrow" className="w-10 h-10" />
                             </button>
@@ -100,7 +98,7 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                     data-aos-duration="800"
                     className="
                     lg:w-[251px]
-                    md:w-[251px]
+                    md:w-[180px]
                     w-[216px]
                     lg:h-[52px]
                     md:h-[52px]

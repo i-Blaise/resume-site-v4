@@ -10,7 +10,7 @@ export default function WorkImages({ images = []}) {
                 className="relative h-[550px] w-auto lg:w-auto md:h-[554px] bg-cover bg-center bg-no-repeat rounded-[13px] mt-6"
             style={{ backgroundImage: `url(${images[0]})` }}>
             </div>
-            <div className="flex flex-col lg:flex-row md:flex-row gap-6 justify-between mt-6 w-full border border-blue-500">
+            <div className="flex flex-col lg:flex-row md:flex-row gap-6 justify-between mt-6 w-full">
                 <div 
                 data-aos="fade-in"
                 data-aos-delay="200"         // ms delay

@@ -1,12 +1,12 @@
 export default function WorkHeader({ number, name, intro}) {
     return (
-        <div className="flex flex-col md:flex-row lg:flex-row h-auto lg:h-[240px] md:h-[240px] bg-[#A78295] rounded-[22px] py-6 lg:px-16 md:px-16 px-8">
+        <div className="flex flex-col md:flex-row lg:flex-row h-auto lg:h-auto md:h-auto bg-[#A78295] rounded-[22px] py-6 lg:px-16 md:px-16 px-8">
             <div 
                 data-aos="fade-up"
                 data-aos-delay="200"         // ms delay
                 data-aos-duration="800"
                 className="flex justify-start items-center lg:w-[368px] md:w-[368px]">
-                <h1 className="font-Inter-Medium lg:text-[121px] md:text-[121px] text-[41px] text-transparent bg-clip-text bg-[#3F2E3E59]">{String(number).padStart(2, "0")}</h1>
+                <h1 className="font-Inter-Medium lg:text-[121px] md:text-[102px] text-[41px] text-transparent bg-clip-text bg-[#3F2E3E59]">{String(number).padStart(2, "0")}</h1>
             </div>
             <div 
                 data-aos="fade-up"
