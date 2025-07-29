@@ -22,6 +22,9 @@ import ID3 from "../../assets/images/portfolio/ID3.png"
 import Coronation1 from "../../assets/images/portfolio/Coronation1.png"
 import Coronation2 from "../../assets/images/portfolio/Coronation2.png"
 import Coronation3 from "../../assets/images/portfolio/Coronation3.png"
+import Dosh1 from "../../assets/images/portfolio/Dosh1.png"
+import Dosh2 from "../../assets/images/portfolio/Dosh2.png"
+import Dosh3 from "../../assets/images/portfolio/Dosh3.png"
 
 const portfolioData = [
   {
@@ -49,7 +52,7 @@ const portfolioData = [
     title: "Dosh Website and Content Management System",
     intro: "The Dosh site presents the brand’s FX trading tools and community offerings with clarity and modern UX design.",
     info: "The backend CMS allows the Dosh team to manage updates, testimonials, blog posts, and event listings without developer support.",
-    images: [],
+    images: [Dosh1, Dosh2, Dosh3],
     techStack: ["Next.js", "TailwindCSS", "Node.js", "MongoDB"]
   },
   {
