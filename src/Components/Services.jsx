@@ -33,6 +33,7 @@ export default function Services() {
                 bg-[#331D2C]
                 rounded-[4.33px]
                 px-4 md:px-8
+                gap-2
                 
                 cursor-pointer
                 transition-transform duration-200 hover:-translate-y-1">
