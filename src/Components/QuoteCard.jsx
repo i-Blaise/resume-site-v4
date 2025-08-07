@@ -14,13 +14,7 @@ export default function QuoteCard() {
                 data-aos-delay="200"         // ms delay
                 data-aos-duration="800"
                 className="font-Inter-Regular lg:text-[19.5px] md:text-[19.5px] uppercase font-medium text-[14px] text-[#F0CCCC6B]">
-                    Working with Mo on a project with Federal
-                    impact has been a great example of
-                    collaboration that was not only <span className="text-[#EFE1D1]">fueled by
-                    his excellent design expertise but also his
-                    relentless enthusiasm for the details.</span>  His
-                    process inspired the team and our clients to
-                    delve to greater details of what is possible.
+                    Working with Blaise on a high-impact federal project was a masterclass in collaboration. His blend of <span className="text-[#EFE1D1]">engineering rigour and design intuition elevated every sprint, and his relentless eye for detail</span> gave our clients the confidence to push the vision further.
                 </p>
                 <p 
                 data-aos="fade-up"

@@ -46,7 +46,7 @@ export default function Work() {
             data-aos-delay="300"
             data-aos-duration="800"
             className="
-                w-[120px] md:w-[90px] lg:w-[180px]
+                w-[120px] md:w-[150px] lg:w-[180px]
                 h-[44px] md:h-[52px]
                 bg-[linear-gradient(145deg,#B47B8F_10%,rgba(239,225,209,0.02)_35%,#EFD0BC_70%,#A78295_95%),linear-gradient(315deg,#F0E1D2,#D8B5A1)]
                 rounded-[22px]
