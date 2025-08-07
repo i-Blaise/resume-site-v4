@@ -1,6 +1,7 @@
 import { useState } from 'react'; 
 import ContactModal from './ContactModal';
 import MemojiFace from '../assets/images/memoji-face.png';
+import Resume from '../assets/resume.pdf'
 
 export default function Navbar() {
 
@@ -18,7 +19,7 @@ export default function Navbar() {
         <ul className="flex items-center justify-between p-1 px-2 bg-[#3F2E3E] rounded-[10.83px] w-[312px] h-auto">
             <li><img className='w-[52px] h-[52px]' src={MemojiFace} alt="Memoji Face" /></li>
             <a href="#work"><li className="text-[#A78295] uppercase font-Inter-Medium text-[12px] cursor-pointer hover:text-[#927182]">Works</li></a>
-            <li className="text-[#A78295] uppercase font-Inter-Medium text-[12px] cursor-pointer hover:text-[#927182]">CV</li>
+            <a href={Resume} target="_blank" rel="noopener noreferrer"><li className="text-[#A78295] uppercase font-Inter-Medium text-[12px] cursor-pointer hover:text-[#927182]">CV</li></a>
             <li>
             <button
               onClick={() => handleOpen('contact')}
