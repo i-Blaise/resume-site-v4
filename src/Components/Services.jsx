@@ -28,7 +28,7 @@ export default function Services() {
                 flex 
                 items-center 
                 justify-between
-                w-[216px] md:w-[230px]
+                w-auto md:w-auto
                 h-[44px] md:h-[52px]
                 bg-[#331D2C]
                 rounded-[4.33px]

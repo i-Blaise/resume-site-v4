@@ -128,7 +128,7 @@ Error generating stack: `+e.message+`
                 flex \r
                 items-center \r
                 justify-between\r
-                w-[216px] md:w-[230px]\r
+                w-auto md:w-auto\r
                 h-[44px] md:h-[52px]\r
                 bg-[#331D2C]\r
                 rounded-[4.33px]\r
