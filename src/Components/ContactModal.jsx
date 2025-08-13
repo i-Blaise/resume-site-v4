@@ -1,17 +1,21 @@
 // ContactModal.jsx
-import { useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import emailjs from "@emailjs/browser";
 
-export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
+export default function ContactModal({ isOpen, onClose, mode = "contact" }) {
   const dialogRef = useRef(null);
-  const isQuote = mode === 'quote';
+  const formRef = useRef(null);
+  const isQuote = mode === "quote";
+
+  const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 
   /* --- ESC closes modal --- */
   useEffect(() => {
     if (!isOpen) return;
-    const handleKey = e => e.key === 'Escape' && onClose();
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
+    const handleKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
   }, [isOpen, onClose]);
 
   /* --- focus trap --- */
@@ -23,6 +27,51 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
   }, [isOpen]);
 
   if (!isOpen) return null;
+
+  const SERVICE_ID =
+    import.meta.env?.VITE_EMAILJS_SERVICE_ID ||
+    process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID =
+    import.meta.env?.VITE_EMAILJS_TEMPLATE_ID ||
+    process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY =
+    import.meta.env?.VITE_EMAILJS_PUBLIC_KEY ||
+    process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (status.loading) return;
+
+    setStatus({ loading: true, ok: null, msg: "" });
+
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY,
+      });
+
+      setStatus({
+        loading: false,
+        ok: true,
+        msg: isQuote
+          ? "Request received! We’ll send your estimate shortly."
+          : "Message sent! We’ll get back to you soon.",
+      });
+
+      // Optional: auto-close after success
+      setTimeout(() => {
+        onClose?.();
+        formRef.current?.reset();
+        setStatus({ loading: false, ok: null, msg: "" });
+      }, 4200);
+    } catch (err) {
+      console.error(err);
+      setStatus({
+        loading: false,
+        ok: false,
+        msg: "Couldn't send right now. Please try again or email us directly.",
+      });
+    }
+  };
 
   return createPortal(
     <div className="fixed inset-0 z-[100] flex items-center justify-center">
@@ -39,7 +88,7 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
         aria-modal="true"
         aria-labelledby="contact-title"
         tabIndex={-1}
-        onClick={e => e.stopPropagation()}          /* prevent backdrop close */
+        onClick={(e) => e.stopPropagation()} /* prevent backdrop close */
         className="
           relative z-[101]
           w-full max-w-lg
@@ -52,10 +101,10 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
         {/* header */}
         <div className="flex items-start justify-between mb-4">
           <h2 id="contact-title" className="text-xl font-Inter-SemiBold">
-            {isQuote ? 'Get a quote' : 'Start the conversation'}
+            {isQuote ? "Get a quote" : "Start the conversation"}
           </h2>
           <button
-            type="button"                        /* important! */
+            type="button" /* important! */
             aria-label="Close contact form"
             onClick={onClose}
             className="text-2xl leading-none hover:scale-110 transition-transform"
@@ -66,14 +115,21 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
 
         {/* form */}
         <form
-          action="https://formspree.io/f/yourFormID"   /* ← replace */
-          method="POST"
+          ref={formRef}
+          onSubmit={handleSubmit}
           className="space-y-4"
+          /* IMPORTANT: remove action/method - EmailJS handles sending */
         >
+          {/* Honeypot (spam trap) */}
+          <input type="text" name="hp_field" className="hidden" tabIndex={-1} autoComplete="off" />
+
+          {/* Identify which modal sent it */}
+          <input type="hidden" name="form_type" value={isQuote ? "Quote" : "Contact"} />
+
           <label className="block">
             <span className="sr-only">Your name</span>
             <input
-              name="name"
+              name="user_name"
               type="text"
               required
               placeholder="Name"
@@ -85,7 +141,7 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
             <span className="sr-only">Your phone number</span>
             <input
               name="phone_number"
-              type="number"
+              type="tel"
               required
               placeholder="Phone Number"
               className="w-full rounded border border-[#A78295]/40 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#A78295]"
@@ -95,7 +151,7 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
           <label className="block">
             <span className="sr-only">Your email</span>
             <input
-              name="email"
+              name="user_email"
               type="email"
               required
               placeholder="Email"
@@ -105,67 +161,70 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
 
           {isQuote && (
             <>
-                {/* Project type ------------------------------------- */}
-                <label className="block relative">
+              {/* Project type ------------------------------------- */}
+              <label className="block relative">
                 <select
-                    name="projectType"
-                    required
-                    defaultValue=""
-                    className="w-full rounded border border-[#A78295]/40 px-3 py-2
+                  name="projectType"
+                  required
+                  defaultValue=""
+                  className="w-full rounded border border-[#A78295]/40 px-3 py-2
                             appearance-none bg-transparent
                             focus:outline-none focus:ring-2 focus:ring-[#A78295]"
                 >
-                    <option value="" disabled>Project type</option>
-                    <option>Web app</option>
-                    <option>Marketing site</option>
-                    <option>Mobile app</option>
-                    <option>Other</option>
+                  <option value="" disabled>
+                    Project type
+                  </option>
+                  <option>Web app</option>
+                  <option>Marketing site</option>
+                  <option>Mobile app</option>
+                  <option>Other</option>
                 </select>
                 {/* custom ▼ icon */}
                 <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
-                    ▾
+                  ▾
                 </span>
-                </label>
+              </label>
 
-                {/* Budget range ------------------------------------- */}
-                <label className="block relative">
+              {/* Budget range ------------------------------------- */}
+              <label className="block relative">
                 <select
-                    name="budget"
-                    required
-                    defaultValue=""
-                    className="w-full rounded border border-[#A78295]/40 px-3 py-2
+                  name="budget"
+                  required
+                  defaultValue=""
+                  className="w-full rounded border border-[#A78295]/40 px-3 py-2
                             appearance-none bg-transparent
                             focus:outline-none focus:ring-2 focus:ring-[#A78295]"
                 >
-                    <option value="" disabled>Budget range</option>
-                    <option>&lt; $5 k</option>
-                    <option>$5 k – $15 k</option>
-                    <option>$15 k – $30 k</option>
-                    <option>&gt; $30 k</option>
+                  <option value="" disabled>
+                    Budget range
+                  </option>
+                  <option>&lt; GHS 5k</option>
+                  <option>GHS 5k - GHS 15k</option>
+                  <option>GHS 15k - GHS 30k</option>
+                  <option>&gt; GHS 30k</option>
                 </select>
                 <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
-                    ▾
+                  ▾
                 </span>
-                </label>
+              </label>
 
-                {/* Desired launch date ------------------------------ */}
-                <label className="block">
-                    <span className="block mb-1 text-sm font-Inter-SemiBold">
-                        Desired launch date
-                    </span>
+              {/* Desired launch date ------------------------------ */}
+              <label className="block">
+                <span className="block mb-1 text-sm font-Inter-SemiBold">
+                  Desired launch date
+                </span>
 
-                    <input
-                        type="date"
-                        name="deadline"
-                        required
-                        className="w-full rounded border border-[#A78295]/40 px-3 py-2
+                <input
+                  type="date"
+                  name="deadline"
+                  required
+                  className="w-full rounded border border-[#A78295]/40 px-3 py-2
                                 bg-transparent
                                 focus:outline-none focus:ring-2 focus:ring-[#A78295]"
-                    />
-                </label>
+                />
+              </label>
             </>
-            )}
-
+          )}
 
           <label className="block">
             <span className="sr-only">Message</span>
@@ -180,15 +239,26 @@ export default function ContactModal({ isOpen, onClose, mode = 'contact'}) {
 
           <button
             type="submit"
+            disabled={status.loading}
             className="
               w-full h-[44px] md:h-[52px]
               bg-[#331D2C]
               rounded-[4.33px]
               font-Inter-SemiBold text-[13px] font-semibold uppercase
               text-[#EFE1D1]
-              cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-            {isQuote ? 'Get estimate' : 'Send'}
+              cursor-pointer transition-transform duration-200 hover:-translate-y-1
+              disabled:opacity-60
+            "
+          >
+            {status.loading ? "Sending..." : isQuote ? "Get estimate" : "Send"}
           </button>
+
+          {status.ok === true && (
+            <p className="text-green-700 text-sm pt-1 font-semibold">{status.msg}</p>
+          )}
+          {status.ok === false && (
+            <p className="text-red-700 text-sm pt-1 font-semibold">{status.msg}</p>
+          )}
         </form>
       </div>
     </div>,
