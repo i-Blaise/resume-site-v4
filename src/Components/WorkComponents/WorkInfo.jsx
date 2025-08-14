@@ -92,7 +92,7 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                     />
                     </button></a> */}
 
-                    <button 
+                    {/* <button 
                     data-aos="fade-up"
                     data-aos-delay="300"         // ms delay
                     data-aos-duration="800"
@@ -104,7 +104,7 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                     md:h-[52px]
                     h-[44px]
 
-                    /* angled gradient on top, solid base underneath */
+                    
                     bg-[linear-gradient(0deg,#3F2E3E,#3F2E3E),linear-gradient(228.88deg,#573F55_9%,rgba(63,46,62,0.008)_40%)]
 
                     rounded-[4.33px]
@@ -115,7 +115,7 @@ export default function WorkInfo({ description, liveUrl, techStack = []}) {
                     text-[#EFE1D1]
                     uppercase">
                     Case Study
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
