@@ -3,7 +3,7 @@ import bgImg from '../assets/images/bg-image.jpg';
 export default function HeroCard() {
     return (
             <div data-aos="fade-up" id='hero'
-            className="relative h-[363px] lg:h-[560px] md:h-[560px] bg-cover bg-center bg-no-repeat bg-[#450F2B82] bg-blend-overlay rounded-[22px] opacity-0 translate-y-6 transition-all"
+            className="relative h-[560px] lg:h-[560px] md:h-[560px] bg-cover bg-center bg-no-repeat bg-[#450F2B82] bg-blend-overlay rounded-[22px] opacity-0 translate-y-6 transition-all"
             style={{ backgroundImage: `url(${bgImg})`, alt: 'Developer standing outdoors, wearing sunglasses, with lush greenery behind' }}
             >
             {/* Bottom-aligned text container */}
