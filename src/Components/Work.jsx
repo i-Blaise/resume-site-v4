@@ -24,14 +24,14 @@ export default function Work() {
   return (
     <>
       {portfolioData.slice(0, visibleItems).map((item) => {
-        const { id, name, intro, info, url, images, techStack } = item;
+        const { id, name, intro, info, url, images, techStack, button2, buttonName, button2Url } = item;
         const Images = imagesComponents[images.length] || WorkImages_1;
 
         return (
           <div key={id} className="container mx-auto px-4">
             <WorkHeader number={id} name={name} intro={intro} />
             <Images images={images} />
-            <WorkInfo description={info} liveUrl={url} techStack={techStack} />
+            <WorkInfo description={info} liveUrl={url} techStack={techStack} button2={button2} buttonName={buttonName} button2Url={button2Url} />
                   <hr className="border-t border-gray-100 lg:my-22 md:my-22 my-11 w-full opacity-5" />
           </div>
         );
