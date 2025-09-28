@@ -1,6 +1,6 @@
 import { useState } from 'react'; 
 import ContactModal from './ContactModal';
-import MemojiFace from '../assets/images/memoji-face.png';
+import MemojiFace from '../assets/images/memoji-face2.png';
 import Resume from '../assets/resume.pdf'
 
 export default function Navbar() {

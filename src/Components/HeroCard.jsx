@@ -1,4 +1,4 @@
-import bgImg from '../assets/images/bg-image.jpg';
+import bgImg from '../assets/images/bg-image1.jpeg';
 
 export default function HeroCard() {
     return (
