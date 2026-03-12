@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WorkHeader from "./WorkComponents/WorkHeader";
 import WorkImages_2 from "./WorkComponents/WorkImages_2";
 import WorkInfo from "./WorkComponents/WorkInfo";
 import WorkImages_3 from "./WorkComponents/WorkImages_3";
 import WorkImages_1 from "./WorkComponents/WorkImages_1";
+import WorkFilter from "./WorkComponents/WorkFilter";
 
 import portfolioData from "../Components/Data/portfolio-data";
 
@@ -16,14 +17,29 @@ const imagesComponents = {
 export default function Work() {
   const itemsPerPage = 3;
   const [visibleItems, setVisibleItems] = useState(itemsPerPage);
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  // Reset pagination when filter changes
+  useEffect(() => {
+    setVisibleItems(itemsPerPage);
+  }, [activeFilter]);
+
+  const filteredData =
+    activeFilter === "all"
+      ? portfolioData
+      : portfolioData.filter((item) => item.category === activeFilter);
 
   const loadMore = () => {
-    setVisibleItems((prev) => Math.min(prev + itemsPerPage, portfolioData.length));
+    setVisibleItems((prev) => Math.min(prev + itemsPerPage, filteredData.length));
   };
 
   return (
     <>
-      {portfolioData.slice(0, visibleItems).map((item) => {
+      <div className="container mx-auto px-4">
+        <WorkFilter activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+      </div>
+
+      {filteredData.slice(0, visibleItems).map((item) => {
         const { id, name, intro, info, url, images, techStack, button2, buttonName, button2Url } = item;
         const Images = imagesComponents[images.length] || WorkImages_1;
 
@@ -37,7 +53,7 @@ export default function Work() {
         );
       })}
 
-      {visibleItems < portfolioData.length && (
+      {visibleItems < filteredData.length && (
         <>
         <div className="text-center mt-18 font-Inter-SemiBold text-[13px] font-bold flex flex-row justify-center items-center">
         <button 
@@ -64,3 +80,4 @@ export default function Work() {
     </>
   );
 }
+
