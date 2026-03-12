@@ -27,11 +27,14 @@ import Dosh2 from "../../assets/images/portfolio/Dosh2.png"
 import Dosh3 from "../../assets/images/portfolio/Dosh3.png"
 import Bot from "../../assets/images/portfolio/bot.png"
 import Bot1 from "../../assets/images/portfolio/bot1.png"
+import ArtfricaChat1 from "../../assets/images/portfolio/artfrica_chat1.png"
+import ArtfricaChat2 from "../../assets/images/portfolio/artfrica_chat2.png"
 
 const portfolioData = [
   {
     id: 1,
     name: "Jobotron - Automated Job Scraping and Social Posting with AI",
+    category: "ai",
     type: "AI automation platform",
     client: "Internal Project",
     button2Url: "https://github.com/i-Blaise/Jobotron",
@@ -47,7 +50,25 @@ const portfolioData = [
   },
   {
     id: 2,
+    name: "CyberLaw AI Assistant – ArtFrica Studio",
+    category: "ai",
+    type: "AI-powered legal assistant",
+    client: "ArtFrica Studio",
+    button2Url: "https://github.com/i-Blaise/CyberLaw-Assistant-project",
+    button2: true,
+    buttonName: "View GitHub Repo",
+    date: "2025-03-01",
+    url: "https://chat.artfricastudio.com/",
+    title: "CyberLaw AI Assistant",
+    intro: "An AI-powered legal assistant chatbot that provides instant, context-aware answers about Ghana's Cybersecurity (Amendment) Draft Bill 2025, built with a Retrieval-Augmented Generation (RAG) pipeline for accurate, source-grounded responses.",
+    info: "The system uses a FastAPI backend with Google Gemini AI to power a RAG pipeline that ingests the full legislative document, chunks and embeds it for semantic search, and retrieves the most relevant passages to generate precise, legally scoped answers. The React frontend provides an intuitive chat interface with quick-action prompts, conversation history, and a direct link to the source PDF. Strict guardrails ensure the assistant only responds within the scope of the bill, maintaining factual accuracy and preventing hallucination.",
+    images: [ArtfricaChat1, ArtfricaChat2],
+    techStack: ["React.js", "FastAPI (Python)", "Google Gemini AI", "RAG Pipeline", "TailwindCSS"]
+  },
+  {
+    id: 3,
     name: "Dosh Website & CMS + Analytics Dashboard",
+    category: "swe",
     type: "corporate website",
     client: "Dosh FX",
     button2Url: "",
@@ -62,8 +83,9 @@ const portfolioData = [
     techStack: ["React.js", "TailwindCSS", "Laravel (PHP)", "MySQL", "RESTful APIs", "Linux Server (Ubuntu)"]
   },
   {
-    id: 3,
+    id: 4,
     name: "Coronation Website & CMS",
+    category: "swe",
     type: "corporate website",
     client: "Coronation Insurance Ghana",
     button2Url: "",
@@ -72,14 +94,15 @@ const portfolioData = [
     date: "2024-01-18",
     url: "https://coronation.com.gh/",
     title: "Coronation Insurance Corporate Site",
-    intro: "Developed a fully responsive, enterprise-grade web platform for Coronation Insurance Ghana, tailored for the local market and aligned with the Nigerian parent company’s corporate standards.",
+    intro: "Developed a fully responsive, enterprise-grade web platform for Coronation Insurance Ghana, tailored for the local market and aligned with the Nigerian parent company's corporate standards.",
     info: "The frontend was built with React.js, delivering a performant, mobile-friendly interface with optimized routing and component-based architecture. A custom Laravel CMS powers full-site content control, allowing administrators to update text, media, and downloadable assets across all pages. The CMS integrates with the frontend via secure RESTful APIs, enabling real-time updates without deployment cycles. Additional features include a dynamic quote request engine, document download management, and contact form integration with server-side validation. The system is hosted on an Ubuntu Linux server with Nginx, uses MySQL for relational data storage, and leverages Git-based version control for streamlined deployment.",
     images: [Coronation1, Coronation2, Coronation3],
     techStack: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "Laravel (PHP)", "MySQL","RESTful APIs", "Linux Server (Ubuntu)"]
   },
   {
-    id: 4,
+    id: 5,
     name: "Interactive Digital",
+    category: "swe",
     type: "agency website",
     client: "Interactive Digital",
     button2Url: "",
@@ -88,14 +111,15 @@ const portfolioData = [
     date: "2025-02-07",
     url: "https://interactivedigital.com.gh/",
     title: "Interactive Digital Agency Website",
-    intro: "As part of my current role at Interactive Digital (Ghana), I worked with my tech team to spearhead the revamp of the company’s website to deliver a modern, visually engaging experience that reflects the agency’s creative and technical capabilities. The redesign features a responsive animated landing page, integrated client testimonials, and a dynamic blogs page and cards, all optimized for speed, accessibility, and maintainability.",
+    intro: "As part of my current role at Interactive Digital (Ghana), I worked with my tech team to spearhead the revamp of the company's website to deliver a modern, visually engaging experience that reflects the agency's creative and technical capabilities. The redesign features a responsive animated landing page, integrated client testimonials, and a dynamic blogs page and cards, all optimized for speed, accessibility, and maintainability.",
     info: "The frontend was rebuilt using React.js with a modular component-based architecture, enabling reusable elements for sections such as testimonials, portfolio showcases, and the blogs page. Styling and responsive layouts were achieved with Tailwind CSS, while animations were implemented using Framer Motion for smooth, high-performance transitions. The blogs page is powered by secure RESTful API integrations, allowing real-time posting and management of vacancies. The site is hosted on an Ubuntu Linux server with Nginx, deployed via Git-based version control, and optimized using modern build tools to ensure fast load times and an engaging user experience",
     images: [ID1, ID2, ID3],
     techStack: ["Framer Motion", "React.js", "JavaScript (ES6+)", "Tailwind CSS", "Laravel (PHP)", "MySQL","RESTful APIs", "Linux Server (Ubuntu)"]
   },
   {
-    id: 5,
+    id: 6,
     name: "Acacia Blog & Qizz CMS",
+    category: "swe",
     type: "custom CMS",
     client: "Acacia Health Insurance",
     button2Url: "",
@@ -105,13 +129,14 @@ const portfolioData = [
     url: "",
     title: "Acacia Blog and CMS Platform",
     intro: "Developed a custom content management system (CMS) for Acacia Medical Insurance, enabling the company to seamlessly publish and manage health-related content, blog posts, and quiz data for integration into their mobile application.",
-    info: "Built with Laravel, the CMS provides secure, role-based access for the editorial team, along with an intuitive interface for updating copy, media, and blog content. The system exposes a RESTful API that integrates directly with Acacia’s mobile app, allowing real-time synchronization of content without requiring app updates. In addition, a dedicated quiz management module enables administrators to view participant submissions, analyze results through visually accessible graphs, and update questions and answers on demand. The backend is powered by MySQL for data persistence, hosted on an Ubuntu Linux server, and secured with SSL/TLS and Laravel’s built-in CSRF protection.",
+    info: "Built with Laravel, the CMS provides secure, role-based access for the editorial team, along with an intuitive interface for updating copy, media, and blog content. The system exposes a RESTful API that integrates directly with Acacia's mobile app, allowing real-time synchronization of content without requiring app updates. In addition, a dedicated quiz management module enables administrators to view participant submissions, analyze results through visually accessible graphs, and update questions and answers on demand. The backend is powered by MySQL for data persistence, hosted on an Ubuntu Linux server, and secured with SSL/TLS and Laravel's built-in CSRF protection.",
     images: [AcaciaCMS1, AcaciaCMS2, AcaciaCMS3],
     techStack: ["WordPress", "PHP", "MySQL", "Elementor"]
   },
   {
-    id: 6,
+    id: 7,
     name: "Electronic Finding Aid System",
+    category: "swe",
     type: "search and archive portal",
     client: "Public Records and Archives Department",
     button2Url: "",
@@ -121,13 +146,14 @@ const portfolioData = [
     url: "",
     title: "Electronic Finding Aid Portal",
     intro: "Developed an internal Finding Aid System for Social Security and National Insurance Trust (SSNIT) Records Department to streamline the tracking and management of physical record files requested across branches and head office.",
-    info: "The system was built with Laravel, featuring a secure, role-based authentication system to control access by department and user level. It provides an intuitive interface for logging file requests, tracking their movement between branches, and ensuring all records are accounted for. Advanced search functionality, document-type filtering, and metadata tagging allow staff to quickly locate files, while a robust backend manages file status, history, and request fulfillment. The platform uses MySQL for relational data storage, runs on an Ubuntu Linux server, and is secured with SSL/TLS encryption and Laravel’s built-in CSRF protection. This solution significantly improved accountability, reduced lost-file incidents, and enhanced operational efficiency in SSNIT’s records management process.",
+    info: "The system was built with Laravel, featuring a secure, role-based authentication system to control access by department and user level. It provides an intuitive interface for logging file requests, tracking their movement between branches, and ensuring all records are accounted for. Advanced search functionality, document-type filtering, and metadata tagging allow staff to quickly locate files, while a robust backend manages file status, history, and request fulfillment. The platform uses MySQL for relational data storage, runs on an Ubuntu Linux server, and is secured with SSL/TLS encryption and Laravel's built-in CSRF protection. This solution significantly improved accountability, reduced lost-file incidents, and enhanced operational efficiency in SSNIT's records management process.",
     images: [Efas1, Efas2],
     techStack: ["Laravel", "MySQL", "Bootstrap"]
   },
   {
-    id: 7,
+    id: 8,
     name: "Gino Pomo Promotion - Campaign",
+    category: "swe",
     type: "promotion microsite",
     client: "Gino",
     button2Url: "",
@@ -137,13 +163,14 @@ const portfolioData = [
     url: "",
     title: "Gino Pomo Consumer Promo Website",
     intro: "A secure microsite built for a national consumer promotion, enabling participants to enter unique product codes for a chance to win prizes.",
-    info: "Developed for Gino’s campaign, this platform featured robust code verification, a real-time winner leaderboard, SMS integration for instant notifications, and an admin dashboard for tracking entries. The backend was powered by Laravel for security and scalability, while the frontend for participants was crafted with HTML, CSS, and JavaScript for a seamless user experience. This solution not only streamlined prize management but also ensured high engagement and transparency throughout the campaign.",
+    info: "Developed for Gino's campaign, this platform featured robust code verification, a real-time winner leaderboard, SMS integration for instant notifications, and an admin dashboard for tracking entries. The backend was powered by Laravel for security and scalability, while the frontend for participants was crafted with HTML, CSS, and JavaScript for a seamless user experience. This solution not only streamlined prize management but also ensured high engagement and transparency throughout the campaign.",
     images: [Gino1, Gino2],
     techStack: ["PHP", "Laravel", "HTML", "CSS", "JavaScript", "MySQL"]
   },
   {
-    id: 8,
+    id: 9,
     name: "Acacia Health Quiz",
+    category: "swe",
     type: "engagement tool",
     client: "Acacia Health Insurance",
     button2Url: "",
@@ -152,14 +179,15 @@ const portfolioData = [
     date: "2022-07-19",
     url: "",
     title: "Acacia Interactive Health Quiz",
-    intro: "An engaging, interactive web quiz built to educate users about their health risk profiles while seamlessly introducing Acacia’s insurance offerings.",
-    info: "Developed as a responsive web app with dynamic question flows, weighted score calculations, and CRM-integrated lead capture. The platform delivers personalized result pages that not only highlight users’ health insights but also recommend suitable Acacia insurance products, creating a direct pathway from awareness to policy purchase.",
+    intro: "An engaging, interactive web quiz built to educate users about their health risk profiles while seamlessly introducing Acacia's insurance offerings.",
+    info: "Developed as a responsive web app with dynamic question flows, weighted score calculations, and CRM-integrated lead capture. The platform delivers personalized result pages that not only highlight users' health insights but also recommend suitable Acacia insurance products, creating a direct pathway from awareness to policy purchase.",
     images: [AcaciaQuizz1, AcaciaQuizz2, AcaciaQuizz3],
     techStack: ["JavaScript", "HTML", "CSS", "PHP"]
   },
   {
-    id: 9,
+    id: 10,
     name: "The Trust Hospital Covid-Testing Portal",
+    category: "swe",
     type: "dynamic portal",
     client: "The Trust Hospital",
     button2Url: "https://www.thetrusthospital.com/",
