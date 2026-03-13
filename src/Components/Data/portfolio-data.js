@@ -50,7 +50,7 @@ const portfolioData = [
   },
   {
     id: 2,
-    name: "CyberLaw AI Assistant – ArtFrica Studio",
+    name: "CyberLaw Assistant – AI Legal Document Chatbot",
     category: "ai",
     type: "AI-powered legal assistant",
     client: "ArtFrica Studio",
@@ -60,10 +60,11 @@ const portfolioData = [
     date: "2025-03-01",
     url: "https://chat.artfricastudio.com/",
     title: "CyberLaw AI Assistant",
-    intro: "An AI-powered legal assistant chatbot that provides instant, context-aware answers about Ghana's Cybersecurity (Amendment) Draft Bill 2025, built with a Retrieval-Augmented Generation (RAG) pipeline for accurate, source-grounded responses.",
-    info: "The system uses a FastAPI backend with Google Gemini AI to power a RAG pipeline that ingests the full legislative document, chunks and embeds it for semantic search, and retrieves the most relevant passages to generate precise, legally scoped answers. The React frontend provides an intuitive chat interface with quick-action prompts, conversation history, and a direct link to the source PDF. Strict guardrails ensure the assistant only responds within the scope of the bill, maintaining factual accuracy and preventing hallucination.",
+    intro: "CyberLaw Assistant is an AI-powered chatbot designed to help users explore and understand complex legal documents through natural language queries, using a Retrieval-Augmented Generation (RAG) architecture for grounded, context-aware answers.",
+    info: "Instead of relying solely on a language model's internal knowledge, the chatbot retrieves semantically relevant passages from embedded legal documents and supplies them as context for response generation, significantly improving factual accuracy and reducing hallucinations. Key contributions include designing and implementing a full RAG pipeline, building the backend with Python and FastAPI, developing a document ingestion and preprocessing pipeline with token-based chunking, implementing semantic retrieval using FAISS vector database with OpenAI embeddings, and adding conversational memory for contextual follow-up questions within a session.",
     images: [ArtfricaChat1, ArtfricaChat2],
-    techStack: ["React.js", "FastAPI (Python)", "Google Gemini AI", "RAG Pipeline", "TailwindCSS"]
+    techStack: ["Python", "FastAPI", "RAG", "OpenAI Embeddings", "FAISS Vector DB", "React.js"]
+
   },
   {
     id: 3,
