@@ -6,8 +6,8 @@ export default function HeroCard() {
                 data-aos-delay="100"         // ms delay
                 data-aos-duration="800"
                 className="md:w-[150px] lg:w-[150px] w-[300px] cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                <h1 className="text-[52px]">6</h1>
-                <p className="font-Inter-Medium text-[15px]">years building production software</p>
+                <h1 className="text-[52px]">6+</h1>
+                <p className="font-Inter-Medium text-[15px]">years shipping production systems</p>
             </div>
             <div 
                 data-aos="zoom-in"
@@ -15,7 +15,7 @@ export default function HeroCard() {
                 data-aos-duration="800"
                 className="md:w-[150px] lg:w-[150px] w-[300px] cursor-pointer transition-transform duration-200 hover:-translate-y-1">
                 <h1 className="text-[52px]">7</h1>
-                <p className="font-Inter-Medium text-[15px]">industries served (gov, fintech, SaaS…)</p>
+                <p className="font-Inter-Medium text-[15px]">industries across gov, fintech, and SaaS</p>
             </div>
             <div 
                 data-aos="zoom-in"
@@ -23,7 +23,7 @@ export default function HeroCard() {
                 data-aos-duration="800"
                 className="md:w-[150px] lg:w-[150px] w-[300px] cursor-pointer transition-transform duration-200 hover:-translate-y-1">
                 <h1 className="text-[52px]">2</h1>
-                <p className="font-Inter-Medium text-[15px]">AI/ML projects live in production</p>
+                <p className="font-Inter-Medium text-[15px]">AI-powered systems deployed to production</p>
             </div>
             <div 
                 data-aos="zoom-in"
@@ -31,7 +31,7 @@ export default function HeroCard() {
                 data-aos-duration="800"
                 className="md:w-[150px] lg:w-[150px] w-[300px] cursor-pointer transition-transform duration-200 hover:-translate-y-1">
                 <h1 className="text-[52px]">29K+</h1>
-                <p className="font-Inter-Medium text-[15px]">monthly users on products I helped ship</p>
+                <p className="font-Inter-Medium text-[15px]">monthly users served</p>
             </div>
         </div>
     )
